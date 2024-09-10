@@ -76,7 +76,6 @@ id SERIAL PRIMARY KEY,
     id_doctor FOREIGN KEY REFERENCES doctor(id) ON DELETE CASCADE,
     fecha_cita DATE NOT NULL,
     hora_cita TIME NOT NULL,
-    estado VARCHAR(50),
     notas TEXT,
     estado BOOLEAN NOT NULL,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP

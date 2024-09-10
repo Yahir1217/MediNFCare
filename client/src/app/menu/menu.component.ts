@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  isMinimized: boolean = false;
+
+  toggleSidebar() {
+    this.isMinimized = !this.isMinimized;
+  }
 }

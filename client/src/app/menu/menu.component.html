@@ -1,0 +1,62 @@
+<div class="flex">
+    <!-- Inicio del slidebar -->
+    <div class="fixed top-0 left-0 h-screen bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300"
+        [ngClass]="{'w-64': !isMinimized, 'w-16': isMinimized}">
+
+        <!-- Logotipo -->
+        <div class="flex justify-center items-center p-4">
+            <a href="#" class="bg-black text-white p-2 rounded transition-all duration-300"
+                *ngIf="!isMinimized; else logo">
+                MediNFCare
+            </a>
+            <ng-template #logo>
+                <a href="#" class="bg-black text-white p-2 rounded transition-all duration-300">
+                    M
+                </a>
+            </ng-template>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="mt-8">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#"
+                        class="flex items-center justify-center p-2 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        [ngClass]="{'justify-start': !isMinimized, 'justify-center': isMinimized}">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                        </svg>
+                        <span class="ml-3" [ngClass]="{'hidden': isMinimized, 'block': !isMinimized}">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center justify-center p-2 text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        [ngClass]="{'justify-start': !isMinimized, 'justify-center': isMinimized}">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" />
+                        </svg>
+                        <span class="ml-3" [ngClass]="{'hidden': isMinimized, 'block': !isMinimized}">
+                            Users
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Botón de desplazamiento -->
+    <div class="flex-1 transition-all duration-300" [ngClass]="{'ml-64': !isMinimized, 'ml-16': isMinimized}">
+        <button (click)="toggleSidebar()" class="m-4 p-2 text-black rounded-lg">
+            <i class="fa-solid" [ngClass]="{'fa-bars': isMinimized, 'fa-times': !isMinimized}"></i>
+        </button>
+        <br>
+    </div>
+
+</div>

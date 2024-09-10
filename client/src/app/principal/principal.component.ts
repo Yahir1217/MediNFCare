@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2'
+import Hashids from 'hashids';
 
 @Component({
   selector: 'app-principal',
@@ -7,4 +9,23 @@ import { Component } from '@angular/core';
 })
 export class PrincipalComponent {
 
+  isMinimized = false;
+
+  constructor() { }
+
+  OnInit(){
+    
+  }
+  
+  toggleSidebar() {
+    this.isMinimized = !this.isMinimized;
+  }
+  
+  botonclick(){
+    Swal.fire({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success"
+    });
+  }
 }
