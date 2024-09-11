@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './paciente.component.css'
 })
 export class PacienteComponent {
+  isMinimized: boolean = false;
 
+  toggleSidebar() {
+    this.isMinimized = !this.isMinimized;
+  }
 }
