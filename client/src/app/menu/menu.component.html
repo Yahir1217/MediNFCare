@@ -2,19 +2,14 @@
     <!-- Sidebar principal -->
     <div class="fixed top-0 left-0 h-screen bg-blue-100 border-r border-blue-200 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 shadow-lg z-20"
         [ngClass]="{'w-64': !isMinimized, 'w-16': isMinimized}">
-        <!-- Logotipo -->
+        <!-- Logotipo (Aquí puedes poner la imagen) -->
         <div class="flex justify-center items-center p-4">
-            <a href="#" class="bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300"
-                *ngIf="!isMinimized; else logo">
-                MediNFCare
-            </a>
+            <img *ngIf="!isMinimized" src="../assets/img/MediNFCare.png" alt="Logotipo" class="rounded-lg shadow-md">
             <ng-template #logo>
-                <a href="#" class="bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300">
-                    M
-                </a>
+                <img src="./../assets/img/MediNFCare.png" alt="Logo reducido" class="rounded-lg shadow-md">
             </ng-template>
         </div>
-        
+
         <!-- Menú de navegación -->
         <nav class="mt-8">
             <ul class="space-y-4">
@@ -79,7 +74,6 @@
 
         <!-- Contenido principal -->
         <main class="flex-1 pt-16 transition-all duration-300" [ngClass]="{'ml-64': !isMinimized, 'ml-16': isMinimized}">
-
             <!-- Aquí va el contenido dinámico -->
             <router-outlet></router-outlet>
         </main>
